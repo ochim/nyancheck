@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+<form method="post" action="/api/v1/send" enctype="multipart/form-data">
+  <input type="file" id="img_file" name="img_file" class="siimple-btn siimple-btn--green">
+  <input type="submit" value="送信" class="siimple-btn siimple-btn--green">
+</form>
+</div>
+  {% if img_url %}
+<div>
+<img src="{{ img_url }}" width=800>
+</div>
+  {% endif %}
+  {% if nyan_type %}
+<div>
+{{ nyan_type }}
+</div>
+  {% endif %}
+{% endblock %}
